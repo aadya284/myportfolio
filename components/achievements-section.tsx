@@ -47,11 +47,17 @@ const achievements = [
     icon: Trophy,
   },
   {
-    title: "Internship",
-    organization: "Innoplexus",
-    description: "Completed a 3 months internship as a Data Engineer",
-    icon: Briefcase,
+    title: "RIFT 2.0",
+    organization: "PhysicsWallah Institute of Innovation",
+    description: "Participated in RIFT 2.0, a 24 hour hackathon where we worked upon Health-Tech",
+    icon: Trophy,
   },
+  {
+    title: "Aperture 3.0",
+    organization:"Open Source Contribution Platform",
+    description:"Contributed to various projects resolving issues and achieved pull shark badge",
+    icon: Award,
+  }
 ]
 
 const certifications = [
