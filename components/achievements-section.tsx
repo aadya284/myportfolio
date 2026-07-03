@@ -29,24 +29,6 @@ const achievements = [
     icon: Trophy,
   },
   {
-    title: "Infosys Springboard ",
-    organization: "Infosys",
-    description: "Course Completion Certification for Natural Language Processing  ",
-    icon: Award,
-  },
-  {
-    title: "Smart India Hackathon",
-    organization: "Government of India",
-    description: "Cleared Institutional round for SIH 2025",
-    icon: Trophy,
-  },
-  {
-    title: "Bajaj Finserv Hackathon Phase 2 Qualifier",
-    organization: "Bajaj Finserv",
-    description: "Qualified for Phase 2 among several teams across India",
-    icon: Trophy,
-  },
-  {
     title: "RIFT 2.0",
     organization: "PhysicsWallah Institute of Innovation",
     description: "Participated in RIFT 2.0, a 24 hour hackathon where we worked upon Health-Tech",
@@ -59,12 +41,18 @@ const achievements = [
     icon: Award,
   }
 ]
+const experience = [
+  {
+    title: "Full Stack Developer Intern",
+    organization: "Tensorik Technologies Private Limited",
+    period: "June 2026-Present",
+    description: "worked on developing, maintaining and improving web applications using React, Node.js, and Supabase. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+    icon: Briefcase,
+  }
+]
 
 const certifications = [
-  "Introduction to Natural Language Processing",
   "Introduction to MongoDB(Students) ",
-  "Udemy- Complete Data Analyst Bootcamp From Basics To Advanced",
-  "Data Analytics Job Simulation(Deliotte)",
   "NPTEL- Cloud Computing",
   "NPTEL - The Joy of Computing using Python",
 ]
@@ -105,12 +93,46 @@ export function AchievementsSection() {
           </p>
         </motion.div>
 
-        {/* Education */}
+        {/* Experience */}
         <div className="mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-8 flex items-center gap-2"
+          >
+            <Briefcase className="h-6 w-6 text-primary" />
+            <h3 className="text-2xl font-bold">Experience</h3>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate={isInView ? "show" : "hidden"}
+            className="grid gap-6 md:grid-cols-2"
+          >
+            {experience.map((exp, index) => (
+              <motion.div key={index} variants={item}>
+                <Card className="h-full hover:shadow-lg transition-all">
+                  <CardHeader>
+                    <CardTitle className="text-xl">{exp.title}</CardTitle>
+                    <p className="text-sm text-muted-foreground">{exp.organization}</p>
+                    <p className="text-sm font-medium text-primary">{exp.period}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{exp.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Education */}
+        <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="mb-8 flex items-center gap-2"
           >
             <GraduationCap className="h-6 w-6 text-primary" />
@@ -144,7 +166,7 @@ export function AchievementsSection() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className="mb-8 flex items-center gap-2"
           >
             <Trophy className="h-6 w-6 text-primary" />
@@ -191,7 +213,7 @@ export function AchievementsSection() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
             className="mb-8 flex items-center gap-2"
           >
             <Award className="h-6 w-6 text-primary" />
