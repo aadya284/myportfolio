@@ -4,8 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github } from "lucide-react"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
 const projects = [
@@ -87,10 +86,10 @@ export function ProjectsSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-black dark:text-[#AE88E8]">
             Featured Projects
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-slate-800 dark:text-slate-300 font-medium">
             Some of the projects I've worked on
           </p>
         </motion.div>
@@ -103,8 +102,8 @@ export function ProjectsSection() {
         >
           {projects.map((project, index) => (
             <motion.div key={index} variants={item} whileHover={{ y: -8 }}>
-              <Card className="flex flex-col overflow-hidden transition-all hover:shadow-lg h-full">
-                <div className="aspect-video w-full overflow-hidden">
+              <Card className="flex flex-col overflow-hidden pt-0 transition-all hover:shadow-lg h-full">
+                <div className="relative aspect-video w-full overflow-hidden border-b border-black/10">
                   <motion.img
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
@@ -120,20 +119,20 @@ export function ProjectsSection() {
                 <CardContent className="flex-1">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary">
+                      <Badge key={techIndex} variant="secondary" className="dark:bg-white/10 dark:text-white dark:border dark:border-white/10 font-semibold">
                         {tech}
                       </Badge>
                     ))}
                   </div>
                 </CardContent>
                 <CardFooter className="gap-2">
-                  <Button variant="outline" size="sm" asChild className="flex-1">
+                  <Button variant="outline" size="sm" asChild className="flex-1 dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/15">
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" asChild className="flex-1">
+                  <Button size="sm" asChild className="flex-1 bg-[#AE88E8] text-black font-bold hover:bg-[#AE88E8]/80">
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo

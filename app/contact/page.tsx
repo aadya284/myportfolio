@@ -1,15 +1,5 @@
-import { Navigation } from "@/components/navigation"
-import { ContactSection } from "@/components/contact-section"
+import { redirect } from "next/navigation"
 
 export default function ContactPage() {
-  return (
-    <div className="min-h-screen">
-      <Navigation />
-      <div className="w-full max-w-6xl mx-auto px-4">
-        <main>
-          <ContactSection />
-        </main>
-      </div>
-    </div>
-  )
+  redirect("/#contact")
 }
